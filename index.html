@@ -2,41 +2,130 @@
 <html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>모델링 확인</title>
+<title>모델 확인</title>
 <style>
-:root{--bg:#14161a;--card:#1d2026;--line:#2c3038;--fg:#e8eaee;--dim:#9aa1ad;--acc:#7cc4ff;--new:#ffcf5a}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Malgun Gothic",sans-serif}
-header{position:sticky;top:0;z-index:5;background:rgba(20,22,26,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);padding:10px 16px}
-h1{font-size:17px;margin:0 0 6px}.sub{color:var(--dim);font-size:12.5px;margin:0 0 8px}
-nav{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px}
-.chip{flex:none;color:var(--fg);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:3px 11px;font-size:13.5px;background:var(--card)}
-.chip span{color:var(--dim);font-size:12px}
-main{max-width:1500px;margin:0 auto;padding:8px 16px 60px}
-section{scroll-margin-top:110px}h2{font-size:20px;margin:26px 0 8px;border-left:4px solid var(--acc);padding-left:10px}
-details{background:var(--card);border:1px solid var(--line);border-radius:10px;margin:8px 0;overflow:hidden}
-summary{cursor:pointer;padding:10px 12px;list-style:none}summary::-webkit-details-marker{display:none}
-summary::before{content:"▸ ";color:var(--dim)}details[open] summary::before{content:"▾ "}
-.rl{font-weight:700}.meta{color:var(--dim);font-size:12.5px;margin-left:6px}.new{color:#111;background:var(--new);border-radius:4px;padding:0 6px;font-size:12px;margin-left:4px}
-.docs{margin:0 12px 8px;padding-left:18px;color:var(--dim);font-size:12.5px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,520px),1fr));gap:10px;padding:0 12px 12px}
-figure{margin:0}img{width:100%;height:auto;display:block;border-radius:6px;background:#000}
-figcaption{font-size:13px;color:var(--dim);padding:4px 2px 0}
+:root{color-scheme:dark;--paper:#232936;--panel:#323d50;--stage:#151c27;--ink:#f3f1e9;--muted:#b9c5d8;--select:#f0d58d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.35 "Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif}
+main{max-width:1440px;margin:auto;padding:8px clamp(8px,2vw,24px);height:100vh;height:100dvh;min-height:250px;display:grid;grid-template-rows:auto auto auto minmax(0,1fr);gap:6px}
+header{display:flex;justify-content:space-between;align-items:baseline;gap:6px}
+h1{margin:0;font-size:clamp(16px,2.8vw,23px);letter-spacing:-.04em}
+time{color:var(--muted);font-size:11px;white-space:nowrap}
+nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+button,select{min-height:44px;color:var(--ink);background:var(--panel);border:1px solid transparent;border-radius:5px;font:inherit}
+button{cursor:pointer;padding:0 4px}
+button[aria-pressed=true]{background:var(--select);color:var(--stage);font-weight:700}
+button:disabled{opacity:.42;cursor:default}
+:focus-visible{outline:2px solid var(--select);outline-offset:2px}
+.pick{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:10px}
+.pick label{font-size:13px;color:var(--muted)}
+select{width:100%;padding:0 8px}
+.viewer{display:grid;grid-template-rows:minmax(0,1fr) auto;margin:0;min-height:0;gap:6px}
+.stage{background:var(--stage);border-radius:4px;display:grid;place-items:center;min-height:0;overflow:hidden;touch-action:pan-y}
+img{display:block;width:100%;height:100%;min-height:0;object-fit:contain}
+[hidden]{display:none}
+.controls{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:6px;align-items:center;text-align:center}
+.controls button{font-size:22px}
+#caption-wrap{font-size:clamp(12px,3.6vw,16px);overflow-wrap:anywhere}
+#position{display:block;color:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
 </style></head><body>
-<header><h1>보물상자깨기 · 모델링 확인</h1>
-<p class="sub">Studio 실착 사진 · 갱신 2026-11-08 16:00 · 수정할 점은 사진 이름표(예: 「청룡 B1 · 옆」)로 알려 주세요</p>
-<nav><a class="chip" href="#청룡">청룡 <span>1판</span></a><a class="chip" href="#해태">해태 <span>1판</span></a><a class="chip" href="#현무">현무 <span>1판</span></a><a class="chip" href="#주작">주작 <span>1판</span></a><a class="chip" href="#백호">백호 <span>1판</span></a></nav></header>
-<main><section id="청룡"><h2>청룡</h2>
-<details open><summary><span class="rl">청룡 B3 Play광선</span> <b class="new">최신</b> <span class="meta">11-08 16:00 · 사진 0장 · 근거 0170a_청룡B3_Play광선</span></summary><div class="grid"></div></details>
-</section>
-<section id="해태"><h2>해태</h2>
-<details open><summary><span class="rl">해태 B10</span> <b class="new">최신</b> <span class="meta">11-08 13:09 · 사진 6장 · 근거 0166b_해태B10_실착</span></summary><div class="grid"><figure><a href="img/0166b_해태B10_실착/게임거리_전신.jpg" target="_blank"><img loading="lazy" src="img/0166b_해태B10_실착/게임거리_전신.jpg" alt="게임거리_전신"></a><figcaption>해태 B10 · 게임거리_전신</figcaption></figure><figure><a href="img/0166b_해태B10_실착/게임판_반입후.jpg" target="_blank"><img loading="lazy" src="img/0166b_해태B10_실착/게임판_반입후.jpg" alt="게임판_반입후"></a><figcaption>해태 B10 · 게임판_반입후</figcaption></figure><figure><a href="img/0166b_해태B10_실착/뒤사선.jpg" target="_blank"><img loading="lazy" src="img/0166b_해태B10_실착/뒤사선.jpg" alt="뒤사선"></a><figcaption>해태 B10 · 뒤사선</figcaption></figure><figure><a href="img/0166b_해태B10_실착/오라끔_뒤사선.jpg" target="_blank"><img loading="lazy" src="img/0166b_해태B10_실착/오라끔_뒤사선.jpg" alt="오라끔_뒤사선"></a><figcaption>해태 B10 · 오라끔_뒤사선</figcaption></figure><figure><a href="img/0166b_해태B10_실착/근접_다리_앞사선.jpg" target="_blank"><img loading="lazy" src="img/0166b_해태B10_실착/근접_다리_앞사선.jpg" alt="근접_다리_앞사선"></a><figcaption>해태 B10 · 근접_다리_앞사선</figcaption></figure><figure><a href="img/0166b_해태B10_실착/근접_다리_앞사선_반대.jpg" target="_blank"><img loading="lazy" src="img/0166b_해태B10_실착/근접_다리_앞사선_반대.jpg" alt="근접_다리_앞사선_반대"></a><figcaption>해태 B10 · 근접_다리_앞사선_반대</figcaption></figure></div></details>
-</section>
-<section id="현무"><h2>현무</h2>
-<details open><summary><span class="rl">현무 반입 새Play</span> <b class="new">최신</b> <span class="meta">11-08 06:37 · 사진 2장 · 근거 0153d_현무반입_새Play</span></summary><div class="grid"><figure><a href="img/0153d_현무반입_새Play/색1_0_정면.jpg" target="_blank"><img loading="lazy" src="img/0153d_현무반입_새Play/색1_0_정면.jpg" alt="색1_0_정면"></a><figcaption>현무 반입 새Play · 색1_0_정면</figcaption></figure><figure><a href="img/0153d_현무반입_새Play/색3_1_앞사선.jpg" target="_blank"><img loading="lazy" src="img/0153d_현무반입_새Play/색3_1_앞사선.jpg" alt="색3_1_앞사선"></a><figcaption>현무 반입 새Play · 색3_1_앞사선</figcaption></figure></div></details>
-</section>
-<section id="주작"><h2>주작</h2>
-<details open><summary><span class="rl">주작 반입 새Play</span> <b class="new">최신</b> <span class="meta">11-08 05:41 · 사진 3장 · 근거 0151c_주작반입_새Play</span></summary><div class="grid"><figure><a href="img/0151c_주작반입_새Play/색1_0_정면.jpg" target="_blank"><img loading="lazy" src="img/0151c_주작반입_새Play/색1_0_정면.jpg" alt="색1_0_정면"></a><figcaption>주작 반입 새Play · 색1_0_정면</figcaption></figure><figure><a href="img/0151c_주작반입_새Play/색3_1_앞사선.jpg" target="_blank"><img loading="lazy" src="img/0151c_주작반입_새Play/색3_1_앞사선.jpg" alt="색3_1_앞사선"></a><figcaption>주작 반입 새Play · 색3_1_앞사선</figcaption></figure><figure><a href="img/0151c_주작반입_새Play/색1_7_정뒤.jpg" target="_blank"><img loading="lazy" src="img/0151c_주작반입_새Play/색1_7_정뒤.jpg" alt="색1_7_정뒤"></a><figcaption>주작 반입 새Play · 색1_7_정뒤</figcaption></figure></div></details>
-</section>
-<section id="백호"><h2>백호</h2>
-<details open><summary><span class="rl">백호 반입 새Play</span> <b class="new">최신</b> <span class="meta">11-08 04:28 · 사진 3장 · 근거 0149c_백호반입_새Play</span></summary><div class="grid"><figure><a href="img/0149c_백호반입_새Play/색1_앞사선.jpg" target="_blank"><img loading="lazy" src="img/0149c_백호반입_새Play/색1_앞사선.jpg" alt="색1_앞사선"></a><figcaption>백호 반입 새Play · 색1_앞사선</figcaption></figure><figure><a href="img/0149c_백호반입_새Play/색3_앞사선.jpg" target="_blank"><img loading="lazy" src="img/0149c_백호반입_새Play/색3_앞사선.jpg" alt="색3_앞사선"></a><figcaption>백호 반입 새Play · 색3_앞사선</figcaption></figure><figure><a href="img/0149c_백호반입_새Play/색1_정뒤.jpg" target="_blank"><img loading="lazy" src="img/0149c_백호반입_새Play/색1_정뒤.jpg" alt="색1_정뒤"></a><figcaption>백호 반입 새Play · 색1_정뒤</figcaption></figure></div></details>
-</section></main></body></html>
+<main>
+<header><h1>모델 확인</h1><time title="사진 갱신 시각 (한국)">갱신 2026-11-08 15:59</time></header>
+<nav aria-label="범주"></nav>
+<div class="pick"><label for="item">항목</label><select id="item"></select></div>
+<div class="viewer" role="group" aria-label="모델 사진">
+<div class="stage"><img id="photo" alt="" hidden><span id="message" hidden>표시할 사진이 없습니다.</span></div>
+<div class="controls">
+<button id="prev" type="button" aria-label="이전 사진" aria-controls="photo">‹</button>
+<div id="caption-wrap" aria-live="polite" aria-atomic="true"><span id="caption"></span><span id="position"></span></div>
+<button id="next" type="button" aria-label="다음 사진" aria-controls="photo">›</button>
+</div>
+</div>
+</main>
+<noscript>사진을 선택하려면 자바스크립트를 켜 주세요.</noscript>
+<script type="application/json" id="catalog">[{"name":"세트","items":[{"name":"청룡","photos":[{"src":"img/0170a_청룡B3_Play광선/B3_오라끔_정옆_오른쪽에서.jpg","label":"청룡 B3 · 오라끔 정옆 오른쪽에서"},{"src":"img/0170a_청룡B3_Play광선/B3_오라끔_뒤사선_오른쪽.jpg","label":"청룡 B3 · 오라끔 뒤사선 오른쪽"},{"src":"img/0170a_청룡B3_Play광선/B3_오라끔_뒤사선_왼쪽.jpg","label":"청룡 B3 · 오라끔 뒤사선 왼쪽"},{"src":"img/0170a_청룡B3_Play광선/B3_오라끔_발목뒤_근접.jpg","label":"청룡 B3 · 오라끔 발목뒤 근접"}]},{"name":"해태","photos":[{"src":"img/0166b_해태B10_실착/게임거리_전신.jpg","label":"해태 B10 · 게임거리 전신"},{"src":"img/0166b_해태B10_실착/게임판_반입후.jpg","label":"해태 B10 · 게임판 반입후"},{"src":"img/0166b_해태B10_실착/뒤사선.jpg","label":"해태 B10 · 뒤사선"},{"src":"img/0166b_해태B10_실착/오라끔_뒤사선.jpg","label":"해태 B10 · 오라끔 뒤사선"},{"src":"img/0166b_해태B10_실착/근접_다리_앞사선.jpg","label":"해태 B10 · 근접 다리 앞사선"},{"src":"img/0166b_해태B10_실착/근접_다리_앞사선_반대.jpg","label":"해태 B10 · 근접 다리 앞사선 반대"}]},{"name":"백호","photos":[{"src":"img/0149c_백호반입_새Play/색1_앞사선.jpg","label":"백호 반입 · 색1 앞사선"},{"src":"img/0149c_백호반입_새Play/색3_앞사선.jpg","label":"백호 반입 · 색3 앞사선"},{"src":"img/0149c_백호반입_새Play/색1_정뒤.jpg","label":"백호 반입 · 색1 정뒤"}]},{"name":"주작","photos":[{"src":"img/0151c_주작반입_새Play/색1_0_정면.jpg","label":"주작 반입 · 색1 0 정면"},{"src":"img/0151c_주작반입_새Play/색3_1_앞사선.jpg","label":"주작 반입 · 색3 1 앞사선"},{"src":"img/0151c_주작반입_새Play/색1_7_정뒤.jpg","label":"주작 반입 · 색1 7 정뒤"}]},{"name":"현무","photos":[{"src":"img/0153d_현무반입_새Play/색1_0_정면.jpg","label":"현무 반입 · 색1 0 정면"},{"src":"img/0153d_현무반입_새Play/색3_1_앞사선.jpg","label":"현무 반입 · 색3 1 앞사선"}]}]},{"name":"상자","items":[{"name":"전체","photos":[{"src":"img/boxes-lineup/boxes_lineup_v2.jpg","label":"전체 · 지정 대체 자료"}]},{"name":"Z1","photos":[{"src":"img/boxes-z1/lineup_Z1.jpg","label":"Z1 · 구역 시트 · 지정 대체 자료"}]},{"name":"Z2","photos":[{"src":"img/boxes-z2/lineup_Z2.jpg","label":"Z2 · 구역 시트 · 지정 대체 자료"}]},{"name":"Z3","photos":[{"src":"img/boxes-z3/lineup_Z3.jpg","label":"Z3 · 구역 시트 · 지정 대체 자료"}]},{"name":"Z4","photos":[{"src":"img/boxes-z4/lineup_Z4.jpg","label":"Z4 · 구역 시트 · 지정 대체 자료"}]}]},{"name":"펫","items":[{"name":"해륜 수호사자","photos":[{"src":"img/set1/set1_reimport_34.jpg","label":"해륜 수호사자 · Blender 재반입 · 지정 대체 자료"}]},{"name":"새싹 사슴","photos":[{"src":"img/set2/set2_reimport_34.jpg","label":"새싹 사슴 · Blender 재반입 · 지정 대체 자료"}]},{"name":"구름 매","photos":[{"src":"img/set3/set3_reimport_34.jpg","label":"구름 매 · Blender 재반입 · 지정 대체 자료"}]},{"name":"불씨 기린","photos":[{"src":"img/set4/set4_reimport_34.jpg","label":"불씨 기린 · Blender 재반입 · 지정 대체 자료"}]},{"name":"달방울 현무","photos":[{"src":"img/set5/set5_reimport_34.jpg","label":"달방울 현무 · Blender 재반입 · 지정 대체 자료"}]},{"name":"금아귀 파수괴","photos":[{"src":"img/boxpet1/boxpet1_reimport_34.jpg","label":"금아귀 파수괴 · Blender 재반입 · 지정 대체 자료"}]},{"name":"보석 달팽이","photos":[{"src":"img/boxpet2/boxpet2_reimport_34.jpg","label":"보석 달팽이 · Blender 재반입 · 지정 대체 자료"}]},{"name":"동전 두더지","photos":[{"src":"img/boxpet3/boxpet3_reimport_34.jpg","label":"동전 두더지 · Blender 재반입 · 지정 대체 자료"}]},{"name":"색 비교","photos":[{"src":"img/pet-colors/COLOR_VARIANTS.jpg","label":"색 비교 · 지정 색 비교 시트"}]}]},{"name":"일반템","items":[{"name":"나무","photos":[{"src":"img/wood/0094a_나무_Studio실착.jpg","label":"나무 · Studio 실착"}]},{"name":"청동","photos":[{"src":"img/bronze/0097a_청동_Studio실착.jpg","label":"청동 · Studio 실착"}]},{"name":"가죽","photos":[{"src":"img/leather/0098a_가죽r2_인게임.jpg","label":"가죽 · r2 인게임"}]},{"name":"뼈","photos":[{"src":"img/bone/0103a_뼈r2_인게임.jpg","label":"뼈 · r2 인게임"}]},{"name":"사슬","photos":[{"src":"img/chain/1_r2_사슬_앞사선.jpg","label":"사슬 · r2 앞사선"}]},{"name":"판금","photos":[{"src":"img/plate/1_앞사선.jpg","label":"판금 · 앞사선"},{"src":"img/plate/2_정옆.jpg","label":"판금 · 정옆"},{"src":"img/plate/3_뒤사선.jpg","label":"판금 · 뒤사선"},{"src":"img/plate/7_정뒤.jpg","label":"판금 · 정뒤"},{"src":"img/plate/6_다리.jpg","label":"판금 · 다리"},{"src":"img/plate/8_팔굽힘.jpg","label":"판금 · 팔굽힘"}]}]}]</script>
+<script>
+const groups = JSON.parse(document.querySelector('#catalog').textContent);
+const item = document.querySelector('#item');
+const photo = document.querySelector('#photo');
+const message = document.querySelector('#message');
+const caption = document.querySelector('#caption');
+const position = document.querySelector('#position');
+const prev = document.querySelector('#prev');
+const next = document.querySelector('#next');
+let groupIndex = 0;
+let photoIndex = 0;
+const selections = groups.map(() => 0);
+const buttons = groups.map((group, index) => {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.textContent = group.name;
+  button.setAttribute('aria-controls', 'item');
+  button.addEventListener('click', () => selectGroup(index));
+  document.querySelector('nav').append(button);
+  return button;
+});
+const photos = () => groups[groupIndex].items[item.selectedIndex].photos;
+
+function render() {
+  const current = photos()[photoIndex];
+  photo.hidden = !current;
+  message.hidden = Boolean(current);
+  if (current) {
+    photo.alt = current.label;
+    photo.src = current.src;
+  } else {
+    photo.removeAttribute('src');
+    photo.alt = '';
+  }
+  caption.textContent = current?.label ?? groups[groupIndex].items[item.selectedIndex].name;
+  position.textContent = current ? (photoIndex + 1) + ' / ' + photos().length : '';
+  prev.disabled = next.disabled = photos().length < 2;
+}
+function selectGroup(index) {
+  groupIndex = index;
+  buttons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
+  item.replaceChildren(...groups[index].items.map(entry => new Option(entry.name)));
+  item.selectedIndex = selections[index];
+  photoIndex = 0;
+  render();
+}
+function step(delta) {
+  const total = photos().length;
+  if (total < 2) return;
+  photoIndex = (photoIndex + delta + total) % total;
+  render();
+}
+item.addEventListener('change', () => {
+  selections[groupIndex] = item.selectedIndex;
+  photoIndex = 0;
+  render();
+});
+prev.addEventListener('click', () => step(-1));
+next.addEventListener('click', () => step(1));
+document.addEventListener('keydown', event => {
+  if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey ||
+      event.target === item || photos().length < 2) return;
+  if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+    event.preventDefault();
+    step(event.key === 'ArrowLeft' ? -1 : 1);
+  }
+});
+const stage = document.querySelector('.stage');
+let start;
+stage.addEventListener('pointerdown', event => {
+  if (event.isPrimary && event.pointerType === 'touch') {
+    start = [event.clientX, event.clientY];
+    stage.setPointerCapture(event.pointerId);
+  }
+});
+stage.addEventListener('pointercancel', () => { start = null; });
+stage.addEventListener('pointerup', event => {
+  if (!event.isPrimary || !start) return;
+  const dx = event.clientX - start[0];
+  const dy = event.clientY - start[1];
+  start = null;
+  if (Math.abs(dx) >= 36 && Math.abs(dx) > Math.abs(dy)) step(dx < 0 ? 1 : -1);
+});
+selectGroup(0);
+</script></body></html>
